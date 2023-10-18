@@ -1,10 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../Pages/Home/Home";
 import MainLayout from "../MainLayout/Mainlayout";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import Home from "../Pages/Home/Home";
+import AddProduct from "../Components/AddProduct/AddProducts";
+import Products from "../Components/Products/Products";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
-import AddProduct from "../Components/AddProducts";
-import ErrorPage from "../Components/ErrorPage";
+import Apple from "../Components/Apple/Apple";
+import LenovoProducts from "../Components/Lenovo/LenovoProducts";
+import Brand from "../Components/Brand/Brand";
+import MyCart from "../Components/MyCart/MyCart";
+import VivoProducts from "../Components/Vivo/VivoProducts";
 
 const router = createBrowserRouter([
   {
@@ -15,10 +21,20 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("./brand.json"),
+      },
+      {
+        path: "/",
+        element: <Brand></Brand>,
       },
       {
         path: "/addproduct",
         element: <AddProduct />,
+      },
+      {
+        path: "/productscard",
+        element: <Products />,
+        loader: () => fetch("http://localhost:5000/product"),
       },
       {
         path: "/login",
@@ -27,6 +43,26 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/apple",
+        element: <Apple />,
+        loader: () => fetch("http://localhost:5000/Apple"),
+      },
+      {
+        path: "/lenovo",
+        element: <LenovoProducts />,
+        loader: () => fetch("http://localhost:5000/lenovo"),
+      },
+      {
+        path: "/vivo",
+        element: <VivoProducts />,
+        loader: () => fetch("http://localhost:5000/vivo"),
+      },
+      {
+        path: "/cartProducts",
+        element: <MyCart />,
+        loader: () => fetch("http://localhost:5000/cart"),
       },
     ],
   },

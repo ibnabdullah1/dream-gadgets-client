@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddProduct = () => {
   const handleAddProduct = (e) => {
     e.preventDefault();
@@ -6,19 +8,41 @@ const AddProduct = () => {
     const ProductName = form.name.value;
     const brand = form.brand.value;
     const price = form.price.value;
+    const rating = form.rating.value;
     const description = form.description.value;
-    const AddProduct = {
+    const newProduct = {
       img,
       price,
       description,
       ProductName,
       brand,
+      rating,
     };
-    console.log(AddProduct);
+    console.log(newProduct);
+
+    fetch("http://localhost:5000/product", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee Added Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="max-w-[600px] mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="text-2xl py-4 px-6 bg-gray-900 text-white text-center font-bold uppercase">
         Create a Product
       </div>
@@ -60,8 +84,8 @@ const AddProduct = () => {
             <option value="">Select a brand</option>
             <option value="Apple">Apple</option>
             <option value="Samsung">Samsung</option>
-            <option value="Sony">Sony</option>
-            <option value="Intel">Intel</option>
+            <option value="Vivo">Vivo</option>
+            <option value="Lenovo">Lenovo</option>
             <option value="HP (Hewlett-Packard)">HP (Hewlett-Packard)</option>
             <option value="Canon">Canon</option>
           </select>

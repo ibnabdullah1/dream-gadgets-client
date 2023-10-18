@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/gV9qQZN/apple.jpg",
+    "title": "Apple",
+    "path": "apple"
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/gjz9wTm/lenovobg.jpg",
+    "title": "Lenovo",
+    "path": "lenovo"
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/Wn3525G/samsung.webp",
+    "title": "Samsung",
+    "path": "samsung"
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co/PDwJ1FW/vivo-bg.jpg",
+    "title": "Vivo",
+    "path": "vivo"
+  },
+  {
+    "id": 5,
+    "img": "https://i.ibb.co/mTjBRkb/hp-bg.jpg",
+    "title": "HP (Hewlett-Packard)",
+    "path": "hp"
+  },
+  {
+    "id": 6,
+    "img": "https://i.ibb.co/Pjn9CW9/canon.jpg",
+    "title": "Canon",
+    "path": "canon"
+  }
+]

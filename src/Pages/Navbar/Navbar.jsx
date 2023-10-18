@@ -42,7 +42,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/cart"
+          to="/cartProducts"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -54,9 +54,23 @@ const Navbar = () => {
           My Cart
         </NavLink>
       </li>
+
+      <li>
+        <NavLink
+          to="/productscard"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-[#F15A24]  font-semibold "
+              : ""
+          }
+        >
+          Products card
+        </NavLink>
+      </li>
     </>
   );
-
   return (
     <div className=" flex justify-between items-center py-3 px-3 shadow  max-w-7xl   mx-auto">
       <div className="navbar lg:hidden">
