@@ -7,7 +7,7 @@ const Brand = ({ brands }) => {
         Our Category
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-        {brands.map((brand) => (
+        {brands?.map((brand) => (
           <Link key={brand.id} to={`/${brand.path}`}>
             <BrandCard brand={brand}></BrandCard>
           </Link>

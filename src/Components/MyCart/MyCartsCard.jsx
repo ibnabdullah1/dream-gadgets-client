@@ -1,15 +1,15 @@
 const MyCartsCard = ({ cart }) => {
   const { ProductName, brand, description, img, price, rating } = cart;
   return (
-    <section className=" bg-purple-50  py-6 transform duration-500 hover:-translate-y-2 cursor-pointer">
-      <h3 className="bg-[#ffc107] w-[100px] py-2 flex justify-center items-center text-white font-semibold rounded-r-3xl">
+    <section className=" bg-white rounded  py-6 transform duration-500 hover:-translate-y-2 cursor-pointer">
+      <h3 className="bg-[#050504] w-[100px] py-2 flex justify-center items-center text-white font-semibold rounded-r-3xl">
         {brand}
       </h3>
 
       <div className="flex justify-center">
         <img className="h-[180px] w-auto" src={img} alt="" />
       </div>
-      <div className="space-x-1 flex justify-center items-center">
+      <div className="space-x-1 flex justify-center mt-6 items-center">
         <svg
           className="w-4 h-4 mx-px fill-current text-[#ffc107]"
           xmlns="http://www.w3.org/2000/svg"
@@ -47,18 +47,27 @@ const MyCartsCard = ({ cart }) => {
         </svg>
         {rating && <p> ({rating.length > 3 ? rating.slice(0, 3) : rating})</p>}
       </div>
-      <h1 className="text-3xl">{ProductName}</h1>
-      <p className="mb-5">
+
+      <h1 className="font-bold text-3xl md:text-xl text-slate-600 text-center mt-3">
+        {ProductName.length > 30
+          ? `${ProductName.slice(0, 30)}...`
+          : ProductName}
+      </h1>
+      <p className="mb-5 text-lg font-medium text-zinc-800 text-center">
         {description.length > 100
-          ? `${description.slice(0, 100)}...`
+          ? `${description.slice(0, 70)}...`
           : description}
       </p>
-      <h2 className="font-semibold mb-5">${price}</h2>
-      <div>
-        <button className="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">
+      <h2 className="font-bold text-yellow-400 text-center  text-2xl  mb-5">
+        $<span className="text-gray-600">{price}</span>
+      </h2>
+
+      <div className="flex gap-6 justify-center items-center">
+        <button className="inline-block px-12 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
           Update
         </button>
-        <button className="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">
+
+        <button className="inline-block px-12 py-3 text-sm font-medium text-[#ffc107] border border-[#ffc107] rounded hover:bg-[#ffc107] hover:text-white active:bg-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
           Delete
         </button>
       </div>

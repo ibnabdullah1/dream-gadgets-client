@@ -1,13 +1,13 @@
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-const LenovoProductsCard = ({ lenovoProduct }) => {
-  const { _id, ProductName, brand, description, img, price, rating } =
-    lenovoProduct;
 
+const HpProductsCard = ({ hpProduct }) => {
+  const { _id, ProductName, brand, description, img, price, rating } =
+    hpProduct;
   return (
     <section className=" bg-white rounded  py-6 transform duration-500 hover:-translate-y-2 cursor-pointer">
       <h3 className="bg-[#050504] w-[100px] py-2 flex justify-center items-center text-white font-semibold rounded-r-3xl">
-        {brand}
+        {brand.length > 4 ? brand.slice(0, 3) : brand}
       </h3>
 
       <div className="flex justify-center">
@@ -67,7 +67,7 @@ const LenovoProductsCard = ({ lenovoProduct }) => {
       </h2>
 
       <div className="flex gap-6 justify-center items-center">
-        <Link to={`/lenovo/${_id}`}>
+        <Link to={`/hp/${_id}`}>
           <button className="inline-block px-12 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
             Details
           </button>
@@ -77,4 +77,4 @@ const LenovoProductsCard = ({ lenovoProduct }) => {
   );
 };
 
-export default LenovoProductsCard;
+export default HpProductsCard;

@@ -12,6 +12,11 @@ import Brand from "../Components/Brand/Brand";
 import MyCart from "../Components/MyCart/MyCart";
 import VivoProducts from "../Components/Vivo/VivoProducts";
 import AppleProductDetails from "../Components/Apple/AppleProductDetails";
+import VivoProductCard from "../Components/Vivo/VivoProductcard";
+import LenovoPCard from "../Components/Lenovo/LenovoPCard";
+import SamsungProducts from "../Components/Samsung/SamsungProducts";
+import SamsungProductDetails from "../Components/Samsung/SamsungProductDetails";
+import HpProducts from "../Components/HP/HpProducts";
 
 const router = createBrowserRouter([
   {
@@ -62,10 +67,44 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/lenovo"),
       },
       {
+        path: "/lenovo/:id",
+        element: <LenovoPCard />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/lenovo/${params.id}`),
+      },
+      {
         path: "/vivo",
         element: <VivoProducts />,
         loader: () => fetch("http://localhost:5000/vivo"),
       },
+      {
+        path: "/vivo/:id",
+        element: <VivoProductCard />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/vivo/${params.id}`),
+      },
+      {
+        path: "/samsung",
+        element: <SamsungProducts />,
+        loader: () => fetch("http://localhost:5000/samsung"),
+      },
+      {
+        path: "/samsung/:id",
+        element: <SamsungProductDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/samsung/${params.id}`),
+      },
+      {
+        path: "/hp",
+        element: <HpProducts />,
+        loader: () => fetch("http://localhost:5000/hp"),
+      },
+      {
+        path: "/hp/:id",
+        element: <SamsungProductDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/hp/${params.id}`),
+      },
+
       {
         path: "/cartProducts",
         element: <MyCart />,

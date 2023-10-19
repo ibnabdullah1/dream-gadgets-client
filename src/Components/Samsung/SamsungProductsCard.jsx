@@ -1,8 +1,8 @@
-import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-const LenovoProductsCard = ({ lenovoProduct }) => {
-  const { _id, ProductName, brand, description, img, price, rating } =
-    lenovoProduct;
+const SamsungProductsCard = ({ samsungProduct }) => {
+  const { ProductName, brand, description, img, price, rating, _id } =
+    samsungProduct;
+  console.log(samsungProduct);
 
   return (
     <section className=" bg-white rounded  py-6 transform duration-500 hover:-translate-y-2 cursor-pointer">
@@ -57,7 +57,7 @@ const LenovoProductsCard = ({ lenovoProduct }) => {
           ? `${ProductName.slice(0, 30)}...`
           : ProductName}
       </h1>
-      <p className="mb-5 text-lg font-medium text-zinc-800 text-center">
+      <p className="mb-5 mx-2 text-lg font-medium text-zinc-800 text-center">
         {description.length > 100
           ? `${description.slice(0, 70)}...`
           : description}
@@ -67,7 +67,7 @@ const LenovoProductsCard = ({ lenovoProduct }) => {
       </h2>
 
       <div className="flex gap-6 justify-center items-center">
-        <Link to={`/lenovo/${_id}`}>
+        <Link to={`/samsung/${_id}`}>
           <button className="inline-block px-12 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
             Details
           </button>
@@ -77,4 +77,4 @@ const LenovoProductsCard = ({ lenovoProduct }) => {
   );
 };
 
-export default LenovoProductsCard;
+export default SamsungProductsCard;
