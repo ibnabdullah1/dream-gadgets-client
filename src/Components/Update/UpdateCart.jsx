@@ -1,7 +1,10 @@
 import Swal from "sweetalert2";
-
-const AddProduct = () => {
-  const handleAddProduct = (e) => {
+import { useLoaderData } from "react-router-dom";
+const UpdateCart = () => {
+  const Cart = useLoaderData();
+  const { ProductName, brand, description, _id, img, price, rating } = Cart;
+  console.log(Cart);
+  const handleUpdateProduct = (e) => {
     e.preventDefault();
     const form = e.target;
     const img = form.img.value;
@@ -10,7 +13,7 @@ const AddProduct = () => {
     const price = form.price.value;
     const rating = form.rating.value;
     const description = form.description.value;
-    const newProduct = {
+    const UpdateProduct = {
       img,
       price,
       description,
@@ -18,35 +21,35 @@ const AddProduct = () => {
       brand,
       rating,
     };
-    console.log(newProduct);
+    console.log(UpdateProduct);
 
-    fetch("http://localhost:5000/product", {
-      method: "POST",
+    fetch(`http://localhost:5000/cart/${_id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newProduct),
+      body: JSON.stringify(UpdateProduct),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
-            text: "Coffee Added Successfully",
+            text: "Cart Updated Successfully",
             icon: "success",
-            confirmButtonText: "Cool",
+            confirmButtonText: "Ok",
           });
+          form.reset();
         }
       });
   };
-
   return (
     <div className="max-w-[600px] mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="text-2xl py-4 px-6 bg-gray-900 text-white text-center font-bold uppercase">
-        Create a Product
+        Update a Product
       </div>
-      <form onSubmit={handleAddProduct} className="py-4 px-6">
+      <form onSubmit={handleUpdateProduct} className="py-4 px-6">
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
             Img
@@ -56,6 +59,7 @@ const AddProduct = () => {
             id="img"
             type="text"
             name="img"
+            defaultValue={img}
             placeholder="Photo url "
           />
         </div>
@@ -68,6 +72,7 @@ const AddProduct = () => {
             id="name"
             type="text"
             name="name"
+            defaultValue={ProductName}
             placeholder="Product name"
           />
         </div>
@@ -80,6 +85,7 @@ const AddProduct = () => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="brand"
             name="brand"
+            defaultValue={brand}
           >
             <option value="">Select a brand</option>
             <option value="Apple">Apple</option>
@@ -99,6 +105,7 @@ const AddProduct = () => {
             id="price"
             type="tel"
             name="price"
+            defaultValue={price}
             placeholder="Prices"
           />
         </div>
@@ -112,6 +119,7 @@ const AddProduct = () => {
             id="rating"
             type="text"
             name="rating"
+            defaultValue={rating}
             placeholder="Rating here..."
           />
         </div>
@@ -128,6 +136,7 @@ const AddProduct = () => {
             id="description"
             name="description"
             rows="4"
+            defaultValue={description}
             placeholder="Product description here..."
           ></textarea>
         </div>
@@ -144,4 +153,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default UpdateCart;

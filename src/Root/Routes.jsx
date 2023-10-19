@@ -19,6 +19,9 @@ import HpProducts from "../Components/HP/HpProducts";
 import CanonProducts from "../Components/Canon/CanonProducts";
 import CanonProductDetails from "../Components/Canon/CanonProductDetails";
 import PrivateRoute from "./PrivateRoute";
+// import UpdateCart from "../Components/Update/UpdateCart";
+import Ip from "../Components/Update/Ip";
+import UpdateCart from "../Components/Update/UpdateCart";
 
 const router = createBrowserRouter([
   {
@@ -179,6 +182,12 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("http://localhost:5000/cart"),
+      },
+      {
+        path: "cartProducts/update/:id",
+        element: <UpdateCart />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/cart/${params.id}`),
       },
     ],
   },

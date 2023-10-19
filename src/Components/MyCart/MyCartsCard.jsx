@@ -21,7 +21,7 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
           .then((data) => {
             console.log(data);
             if (data.deletedCount) {
-              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              Swal.fire("Deleted!", "Your cart has been deleted.", "success");
 
               const remainingCarts = Carts.filter((cart) => cart._id !== _id);
               setCarts(remainingCarts);
@@ -94,7 +94,7 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
       </h2>
 
       <div className="flex gap-6 justify-center items-center">
-        <Link to="/update">
+        <Link to={`update/${_id}`}>
           <button className="inline-block px-12 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
             Update
           </button>
