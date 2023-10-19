@@ -23,13 +23,16 @@ const UpdateCart = () => {
     };
     console.log(UpdateProduct);
 
-    fetch(`http://localhost:5000/cart/${_id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(UpdateProduct),
-    })
+    fetch(
+      `https://dream-gadget-server-dgh23etb3-arafat-ibn-abdullahs-projects.vercel.app/cart/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(UpdateProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -40,8 +43,8 @@ const UpdateCart = () => {
             icon: "success",
             confirmButtonText: "Ok",
           });
-          form.reset();
         }
+        form.reset();
       });
   };
   return (
