@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-const LenovoPCard = () => {
+const CanonProductDetails = () => {
   const details = useLoaderData();
   const { ProductName, brand, description, img, price, rating } = details;
 
@@ -23,13 +23,29 @@ const LenovoPCard = () => {
         }
       });
   };
+
   return (
-    <div className="bg-gray-100 py-20 dark:bg-gray-800">
+    <div className="bg-gray-100 dark:bg-gray-800 py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row -mx-4">
           <div className="md:flex-1 px-4">
             <div className="h-[460px] rounded-lg bg-white flex justify-center items-center   mb-4">
-              <img className=" w-[350px]  object-cover" src={img} alt={img} />
+              <img className=" w-[200px]  object-cover" src={img} alt={img} />
+            </div>
+            <div className="flex -mx-2 mb-4">
+              <div className="w-1/2 px-2">
+                <button
+                  onClick={handleAddProduct}
+                  className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
+                >
+                  Add to Cart
+                </button>
+              </div>
+              <div className="w-1/2 px-2">
+                <button className="w-full bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">
+                  Add to Wishlist
+                </button>
+              </div>
             </div>
           </div>
           <div className="md:flex-1 px-4">
@@ -114,19 +130,6 @@ const LenovoPCard = () => {
               <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
                 {description}
               </p>
-              <div className="w-1/2  flex gap-4 mt-6">
-                <button
-                  onClick={handleAddProduct}
-                  className="w-full bg-[#ffc107] dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
-                >
-                  Add to Cart
-                </button>
-                <Link to={"/samsung"}>
-                  <button className=" px-10 bg-[#ffc107] dark:bg-gray-600 text-white py-2  rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">
-                    Back
-                  </button>
-                </Link>
-              </div>
             </div>
           </div>
         </div>
@@ -135,4 +138,4 @@ const LenovoPCard = () => {
   );
 };
 
-export default LenovoPCard;
+export default CanonProductDetails;

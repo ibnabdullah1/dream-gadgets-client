@@ -1,5 +1,36 @@
-const MyCartsCard = ({ cart }) => {
-  const { ProductName, brand, description, img, price, rating } = cart;
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+const MyCartsCard = ({ cart, setCarts, Carts }) => {
+  const { ProductName, brand, description, _id, img, price, rating } = cart;
+
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/cart/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+
+              const remainingCarts = Carts.filter((cart) => cart._id !== _id);
+              setCarts(remainingCarts);
+            }
+          });
+      }
+    });
+  };
+
   return (
     <section className=" bg-white rounded  py-6 transform duration-500 hover:-translate-y-2 cursor-pointer">
       <h3 className="bg-[#050504] w-[100px] py-2 flex justify-center items-center text-white font-semibold rounded-r-3xl">
@@ -63,11 +94,16 @@ const MyCartsCard = ({ cart }) => {
       </h2>
 
       <div className="flex gap-6 justify-center items-center">
-        <button className="inline-block px-12 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
-          Update
-        </button>
+        <Link to="/update">
+          <button className="inline-block px-12 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
+            Update
+          </button>
+        </Link>
 
-        <button className="inline-block px-12 py-3 text-sm font-medium text-[#ffc107] border border-[#ffc107] rounded hover:bg-[#ffc107] hover:text-white active:bg-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
+        <button
+          onClick={() => handleDelete(_id)}
+          className="inline-block px-12 py-3 text-sm font-medium text-[#ffc107] border border-[#ffc107] rounded hover:bg-[#ffc107] hover:text-white active:bg-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]"
+        >
           Delete
         </button>
       </div>

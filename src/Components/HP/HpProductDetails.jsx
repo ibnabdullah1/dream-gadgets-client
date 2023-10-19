@@ -4,7 +4,6 @@ import toast from "react-hot-toast";
 const HpProductDetails = () => {
   const details = useLoaderData();
   const { ProductName, brand, description, img, price, rating } = details;
-  console.log(details);
 
   const addedCart = { ProductName, brand, description, img, price, rating };
   const handleAddProduct = () => {

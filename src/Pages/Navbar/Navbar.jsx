@@ -5,9 +5,9 @@ import { useContext } from "react";
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
 
-  // const handleLogOut = () => {
-  //   return logout();
-  // };
+  const handleLogOut = () => {
+    return logout();
+  };
 
   const navLinks = (
     <>
@@ -52,21 +52,6 @@ const Navbar = () => {
           }
         >
           My Cart
-        </NavLink>
-      </li>
-
-      <li>
-        <NavLink
-          to="/productscard"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "text-[#F15A24]  font-semibold "
-              : ""
-          }
-        >
-          Products card
         </NavLink>
       </li>
     </>
@@ -164,7 +149,7 @@ const Navbar = () => {
 
             {user ? (
               <button
-                // onClick={handleLogOut}
+                onClick={handleLogOut}
                 className="bg-blue-500 uppercase w-full text-white font-semibold py-2 px-4 rounded"
               >
                 Sign Out

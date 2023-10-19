@@ -3,7 +3,6 @@ import MainLayout from "../MainLayout/Mainlayout";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 import AddProduct from "../Components/AddProduct/AddProducts";
-import Products from "../Components/Products/Products";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Apple from "../Components/Apple/Apple";
@@ -17,6 +16,9 @@ import LenovoPCard from "../Components/Lenovo/LenovoPCard";
 import SamsungProducts from "../Components/Samsung/SamsungProducts";
 import SamsungProductDetails from "../Components/Samsung/SamsungProductDetails";
 import HpProducts from "../Components/HP/HpProducts";
+import CanonProducts from "../Components/Canon/CanonProducts";
+import CanonProductDetails from "../Components/Canon/CanonProductDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -35,13 +37,14 @@ const router = createBrowserRouter([
       },
       {
         path: "/addproduct",
-        element: <AddProduct />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <AddProduct />
+          </PrivateRoute>
+        ),
       },
-      {
-        path: "/productscard",
-        element: <Products />,
-        loader: () => fetch("http://localhost:5000/product"),
-      },
+
       {
         path: "/login",
         element: <Login />,
@@ -52,62 +55,129 @@ const router = createBrowserRouter([
       },
       {
         path: "/apple",
-        element: <Apple />,
+        element: (
+          <PrivateRoute>
+            <Apple />
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/Apple"),
       },
       {
         path: "/apple/:id",
-        element: <AppleProductDetails />,
+        element: (
+          <PrivateRoute>
+            <AppleProductDetails />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/Apple/${params.id}`),
       },
       {
         path: "/lenovo",
-        element: <LenovoProducts />,
+        element: (
+          <PrivateRoute>
+            <LenovoProducts />
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/lenovo"),
       },
       {
         path: "/lenovo/:id",
-        element: <LenovoPCard />,
+        element: (
+          <PrivateRoute>
+            <LenovoPCard />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/lenovo/${params.id}`),
       },
       {
         path: "/vivo",
-        element: <VivoProducts />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <VivoProducts />
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/vivo"),
       },
       {
         path: "/vivo/:id",
-        element: <VivoProductCard />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <VivoProductCard />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/vivo/${params.id}`),
       },
       {
         path: "/samsung",
-        element: <SamsungProducts />,
+        element: (
+          <PrivateRoute>
+            <SamsungProducts />
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/samsung"),
       },
       {
         path: "/samsung/:id",
-        element: <SamsungProductDetails />,
+        element: (
+          <PrivateRoute>
+            <SamsungProductDetails />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/samsung/${params.id}`),
       },
       {
         path: "/hp",
-        element: <HpProducts />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <HpProducts />
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/hp"),
       },
       {
         path: "/hp/:id",
-        element: <SamsungProductDetails />,
+        element: (
+          <PrivateRoute>
+            <SamsungProductDetails />
+          </PrivateRoute>
+        ),
         loader: ({ params }) => fetch(`http://localhost:5000/hp/${params.id}`),
+      },
+      {
+        path: "/canon",
+        element: (
+          <PrivateRoute>
+            <CanonProducts />
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/canon"),
+      },
+      {
+        path: "/canon/:id",
+        element: (
+          <PrivateRoute>
+            <CanonProductDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/canon/${params.id}`),
       },
 
       {
         path: "/cartProducts",
-        element: <MyCart />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <MyCart />
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/cart"),
       },
     ],
