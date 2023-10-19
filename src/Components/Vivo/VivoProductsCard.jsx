@@ -56,7 +56,7 @@ const VivoProductsCard = ({ vivoProduct }) => {
       </p>
       <h2 className="font-semibold mb-5">${price}</h2>
       <button className="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">
-        Add To Cart
+        Details
       </button>
     </section>
   );

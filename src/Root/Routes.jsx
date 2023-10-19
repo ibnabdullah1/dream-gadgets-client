@@ -11,6 +11,7 @@ import LenovoProducts from "../Components/Lenovo/LenovoProducts";
 import Brand from "../Components/Brand/Brand";
 import MyCart from "../Components/MyCart/MyCart";
 import VivoProducts from "../Components/Vivo/VivoProducts";
+import AppleProductDetails from "../Components/Apple/AppleProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,12 @@ const router = createBrowserRouter([
         path: "/apple",
         element: <Apple />,
         loader: () => fetch("http://localhost:5000/Apple"),
+      },
+      {
+        path: "/apple/:id",
+        element: <AppleProductDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/Apple/${params.id}`),
       },
       {
         path: "/lenovo",

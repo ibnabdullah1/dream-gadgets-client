@@ -1,26 +1,8 @@
 import Swal from "sweetalert2";
-import toast from "react-hot-toast";
-const ApplesCard = ({ apple }) => {
-  const { ProductName, brand, description, img, price, rating } = apple;
 
-  const addedCart = { ProductName, brand, description, img, price, rating };
-  const handleAddProduct = () => {
-    console.log(addedCart);
-    fetch("http://localhost:5000/cart", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(addedCart),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          toast.success("Product added in Cart successfully");
-        }
-      });
-  };
+import { Link } from "react-router-dom";
+const ApplesCard = ({ apple }) => {
+  const { _id, ProductName, brand, description, img, price, rating } = apple;
 
   return (
     <section className=" bg-purple-50  py-6 transform duration-500 hover:-translate-y-2 cursor-pointer">
@@ -76,12 +58,14 @@ const ApplesCard = ({ apple }) => {
           : description}
       </p>
       <h2 className="font-semibold mb-5">${price}</h2>
-      <button
-        onClick={handleAddProduct}
-        className="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600"
-      >
+      <button className="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">
         Add To Cart
       </button>
+      <Link to={`/apple/${_id}`}>
+        <button className="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">
+          Details
+        </button>
+      </Link>
     </section>
   );
 };
