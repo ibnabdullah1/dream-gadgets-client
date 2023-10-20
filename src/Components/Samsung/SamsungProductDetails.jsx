@@ -9,13 +9,16 @@ const SamsungProductDetails = () => {
   const addedCart = { ProductName, brand, description, img, price, rating };
   const handleAddProduct = () => {
     console.log(addedCart);
-    fetch("http://localhost:5000/cart", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(addedCart),
-    })
+    fetch(
+      " https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/cart",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(addedCart),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

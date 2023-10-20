@@ -61,7 +61,10 @@ const router = createBrowserRouter([
             <Apple />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/Apple"),
+        loader: () =>
+          fetch(
+            " https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/Apple"
+          ),
       },
       {
         path: "/apple/:id",
@@ -71,7 +74,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/Apple/${params.id}`),
+          fetch(
+            ` https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/Apple/${params.id}`
+          ),
       },
       {
         path: "/lenovo",
@@ -80,7 +85,10 @@ const router = createBrowserRouter([
             <LenovoProducts />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/lenovo"),
+        loader: () =>
+          fetch(
+            " https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/lenovo"
+          ),
       },
       {
         path: "/lenovo/:id",
@@ -90,7 +98,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/lenovo/${params.id}`),
+          fetch(
+            ` https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/lenovo/${params.id}`
+          ),
       },
       {
         path: "/vivo",
@@ -100,7 +110,10 @@ const router = createBrowserRouter([
             <VivoProducts />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/vivo"),
+        loader: () =>
+          fetch(
+            " https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/vivo"
+          ),
       },
       {
         path: "/vivo/:id",
@@ -111,7 +124,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/vivo/${params.id}`),
+          fetch(
+            ` https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/vivo/${params.id}`
+          ),
       },
       {
         path: "/samsung",
@@ -120,7 +135,10 @@ const router = createBrowserRouter([
             <SamsungProducts />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/samsung"),
+        loader: () =>
+          fetch(
+            " https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/samsung"
+          ),
       },
       {
         path: "/samsung/:id",
@@ -130,7 +148,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/samsung/${params.id}`),
+          fetch(
+            ` https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/samsung/${params.id}`
+          ),
       },
       {
         path: "/hp",
@@ -140,7 +160,10 @@ const router = createBrowserRouter([
             <HpProducts />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/hp"),
+        loader: () =>
+          fetch(
+            " https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/hp"
+          ),
       },
       {
         path: "/hp/:id",
@@ -149,7 +172,10 @@ const router = createBrowserRouter([
             <SamsungProductDetails />
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/hp/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            ` https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/hp/${params.id}`
+          ),
       },
       {
         path: "/canon",
@@ -158,7 +184,10 @@ const router = createBrowserRouter([
             <CanonProducts />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/canon"),
+        loader: () =>
+          fetch(
+            " https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/canon"
+          ),
       },
       {
         path: "/canon/:id",
@@ -168,7 +197,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/canon/${params.id}`),
+          fetch(
+            ` https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/canon/${params.id}`
+          ),
       },
 
       {
@@ -179,13 +210,18 @@ const router = createBrowserRouter([
             <MyCart />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/cart"),
+        loader: () =>
+          fetch(
+            " https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/cart"
+          ),
       },
       {
         path: "cartProducts/update/:id",
         element: <UpdateCart />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/cart/${params.id}`),
+          fetch(
+            ` https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/cart/${params.id}`
+          ),
       },
     ],
   },

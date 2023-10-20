@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const MyCartsCard = ({ cart, setCarts, Carts }) => {
   const { ProductName, brand, description, _id, img, price, rating } = cart;
-  console.log(description);
+
   const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -14,9 +14,12 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cart/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          ` https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/cart/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
