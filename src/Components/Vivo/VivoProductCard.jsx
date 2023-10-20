@@ -100,16 +100,6 @@ const VivoProductCard = () => {
                   initialRating={parRating}
                   readonly
                 />
-                <span>
-                  ({" "}
-                  {rating &&
-                    (rating.length > 3
-                      ? rating.slice(0, 3)
-                      : rating
-                      ? rating
-                      : "0")}
-                  )
-                </span>
               </p>
             </div>
 
@@ -123,7 +113,7 @@ const VivoProductCard = () => {
               <div className=" flex gap-4 mt-6">
                 <button
                   onClick={handleAddProduct}
-                  className="w-[400px]  bg-[#ffc107] dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
+                  className="w-[200px]  bg-[#ffc107] dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
                 >
                   Add to Cart
                 </button>
