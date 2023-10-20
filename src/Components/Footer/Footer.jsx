@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="-mx-4 flex flex-wrap justify-between">
               <div className="px-4 my-4 w-full xl:w-1/5">
                 <h2 className="inline-block text-3xl font-semibold text-white  pb-4  Barlow-Condensed">
-                  HELLO, WE ARE TENNISCLUB
+                  DREAM GADGETS
                 </h2>
                 <p className="">
                   Inissimos ducimos qui blandiitis praesentium voluptatum
@@ -24,13 +24,13 @@ const Footer = () => {
                 <ul className="leading-8">
                   <li>
                     <a href="#" className="hover:text-blue-400">
-                      The USA — <br />
-                      11792 London Rd, Derby, <br /> OH 43117, US
+                      The BANGLADESH — <br />
+                      Bashundhara City, Dhaka <br /> Level 5, Block C,Shop 85
                     </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-blue-400">
-                      tennisClub21@email.com
+                      dreamgadgets01@email.com
                     </a>
                   </li>
                   <li className="Barlow-Condensed">+1 800 555 45 65</li>
@@ -145,7 +145,7 @@ const Footer = () => {
           <div className="container mx-auto px-4">
             <div className="-mx-4 flex flex-wrap justify-between">
               <div className="px-4 w-full text-center sm:w-auto sm:text-left">
-                Copyright © 2020 - 2022 Tennis Club All Rights Reserved.
+                Copyright © 2020 - 2022 Gadgets All Rights Reserved.
               </div>
             </div>
           </div>

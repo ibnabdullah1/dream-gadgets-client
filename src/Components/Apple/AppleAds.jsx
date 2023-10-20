@@ -6,7 +6,7 @@ const AppleAds = () => {
           <div className=" bg carousel-item relative w-full">
             <img
               className="w-full h-full"
-              src="https://i.ibb.co/MDdGnpt/Picsart-23-10-20-04-10-49-382.jpg"
+              src="https://i.ibb.co/QNJP6RR/106742568-1602615652022-gettyimages-1229049972-APPLE-IPHONES.jpg"
               alt=""
             />
 
