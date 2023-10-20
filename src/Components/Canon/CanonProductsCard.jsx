@@ -1,4 +1,5 @@
 import Rating from "react-rating";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 const CanonProductsCard = ({ canonProduct }) => {
   const { _id, ProductName, brand, description, img, price, rating } =
@@ -82,6 +83,18 @@ const CanonProductsCard = ({ canonProduct }) => {
       </div>
     </section>
   );
+};
+
+CanonProductsCard.propTypes = {
+  canonProduct: PropTypes.shape({
+    _id: PropTypes.string,
+    ProductName: PropTypes.string,
+    brand: PropTypes.string,
+    description: PropTypes.string,
+    img: PropTypes.string,
+    price: PropTypes.number,
+    rating: PropTypes.string,
+  }).isRequired,
 };
 
 export default CanonProductsCard;

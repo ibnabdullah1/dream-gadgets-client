@@ -1,6 +1,5 @@
-import Swal from "sweetalert2";
-
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import Rating from "react-rating";
 const ApplesCard = ({ apple }) => {
   const { _id, ProductName, brand, description, img, price, rating } = apple;
@@ -85,5 +84,15 @@ const ApplesCard = ({ apple }) => {
     </section>
   );
 };
-
+ApplesCard.propTypes = {
+  apple: PropTypes.shape({
+    _id: PropTypes.string,
+    ProductName: PropTypes.string,
+    brand: PropTypes.string,
+    description: PropTypes.string,
+    img: PropTypes.string,
+    price: PropTypes.number,
+    rating: PropTypes.string,
+  }).isRequired,
+};
 export default ApplesCard;

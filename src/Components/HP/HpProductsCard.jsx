@@ -1,6 +1,6 @@
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
 const HpProductsCard = ({ hpProduct }) => {
   const { _id, ProductName, brand, description, img, price, rating } =
     hpProduct;
@@ -83,6 +83,18 @@ const HpProductsCard = ({ hpProduct }) => {
       </div>
     </section>
   );
+};
+
+HpProductsCard.propTypes = {
+  hpProduct: PropTypes.shape({
+    _id: PropTypes.string,
+    ProductName: PropTypes.string,
+    brand: PropTypes.string,
+    description: PropTypes.string,
+    img: PropTypes.string,
+    price: PropTypes.number,
+    rating: PropTypes.string,
+  }).isRequired,
 };
 
 export default HpProductsCard;

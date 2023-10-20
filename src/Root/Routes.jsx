@@ -218,7 +218,12 @@ const router = createBrowserRouter([
       },
       {
         path: "cartProducts/update/:id",
-        element: <UpdateCart />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <UpdateCart />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             ` https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/cart/${params.id}`

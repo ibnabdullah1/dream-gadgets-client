@@ -1,9 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
   console.log(location);
   const navigate = useNavigate();
@@ -100,16 +102,24 @@ const Login = () => {
                 Password
               </span>
             </label>
-            <input
-              className="bg-[#f3f3f3] w-full pl-5 py-3 mb-6 rounded-md"
-              type="password"
-              name="password"
-              id=""
-              placeholder="Enter your password"
-            />
+            <div className="mb-4 relative">
+              <input
+                className="bg-[#f3f3f3] w-full pl-5 py-4  rounded-md"
+                type={showPassword ? "text" : "password"}
+                name="password"
+                id=""
+                placeholder="Enter your password"
+              />
+              <span
+                className="absolute top-[19px] right-4"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+              </span>
+            </div>
             <br />
 
-            <button className="bg-[#403F3F] mb-6 rounded-md w-full flex justify-center items-center text-white font-medium py-2 ">
+            <button className="bg-[#ffc107] mb-6 rounded-md w-full flex justify-center items-center text-white font-medium py-2 ">
               Login
             </button>
 
@@ -118,7 +128,7 @@ const Login = () => {
             <p className="text-[#706F6F]  font-medium text-center ">
               Dont’t Have An Account ?{" "}
               <Link to={"/register"}>
-                <span className="text-[#f9645b] font-medium">Register</span>
+                <span className="text-[#ffc107] font-medium">Register</span>
               </Link>
             </p>
           </form>

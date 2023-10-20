@@ -1,4 +1,5 @@
 import Rating from "react-rating";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const MyCartsCard = ({ cart, setCarts, Carts }) => {
@@ -117,6 +118,20 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
       </div>
     </section>
   );
+};
+
+MyCartsCard.propTypes = {
+  cart: PropTypes.shape({
+    _id: PropTypes.string,
+    ProductName: PropTypes.string,
+    brand: PropTypes.string,
+    description: PropTypes.string,
+    img: PropTypes.string,
+    price: PropTypes.number,
+    rating: PropTypes.string,
+  }).isRequired,
+  setCarts: PropTypes.func.isRequired,
+  Carts: PropTypes.array.isRequired,
 };
 
 export default MyCartsCard;

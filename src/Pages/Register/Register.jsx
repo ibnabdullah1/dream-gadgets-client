@@ -1,10 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 const Register = () => {
   const [error, setError] = useState("");
-
+  const [showPassword, setShowPassword] = useState(false);
   const { createUser, handleUpdateProfile } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -14,7 +15,6 @@ const Register = () => {
     const password = e.target.password.value;
     const name = e.target.name.value;
     const img = e.target.img.value;
-    console.log(email, password, name, img);
     setError("");
     if (
       password.length < 6 ||
@@ -94,16 +94,24 @@ const Register = () => {
                 Password
               </span>
             </label>
-            <input
-              className="bg-[#f3f3f3] w-full pl-5 py-4 mb-3 rounded-md"
-              type="password"
-              name="password"
-              id=""
-              placeholder="Enter your password"
-            />
+            <div className="mb-4 relative">
+              <input
+                className="bg-[#f3f3f3] w-full pl-5 py-4  rounded-md"
+                type={showPassword ? "text" : "password"}
+                name="password"
+                id=""
+                placeholder="Enter your password"
+              />
+              <span
+                className="absolute top-[19px] right-4"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+              </span>
+            </div>
             <br />
 
-            <button className="bg-[#403F3F] mb-4 rounded-md w-full flex justify-center items-center text-white font-medium py-2 ">
+            <button className="bg-[#ffc107] mb-4 rounded-md w-full flex justify-center items-center text-white font-medium py-2 ">
               Register
             </button>
             {error && (
@@ -114,7 +122,7 @@ const Register = () => {
             <p className="text-[#706F6F] font-medium">
               Already registered?
               <Link to={"/login"}>
-                <span className="text-[#f9645b] font-medium">Login</span>
+                <span className="text-[#ffc107] ml-2 font-medium">Login</span>
               </Link>
             </p>
           </form>

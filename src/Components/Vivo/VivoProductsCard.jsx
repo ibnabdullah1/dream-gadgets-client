@@ -1,5 +1,6 @@
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 const VivoProductsCard = ({ vivoProduct }) => {
   const { _id, ProductName, brand, description, img, price, rating } =
     vivoProduct;
@@ -78,6 +79,17 @@ const VivoProductsCard = ({ vivoProduct }) => {
       </div>
     </section>
   );
+};
+VivoProductsCard.propTypes = {
+  vivoProduct: PropTypes.shape({
+    _id: PropTypes.string,
+    ProductName: PropTypes.string,
+    brand: PropTypes.string,
+    description: PropTypes.string,
+    img: PropTypes.string,
+    price: PropTypes.number,
+    rating: PropTypes.string,
+  }).isRequired,
 };
 
 export default VivoProductsCard;
