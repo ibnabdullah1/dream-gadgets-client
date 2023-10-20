@@ -11,7 +11,7 @@ const AppleProductDetails = () => {
   const handleAddProduct = () => {
     console.log(addedCart);
     fetch(
-      " https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/cart",
+      " https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/cart",
       {
         method: "POST",
         headers: {
@@ -46,10 +46,7 @@ const AppleProductDetails = () => {
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
               {ProductName}
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
-              ante justo. Integer euismod libero id mauris malesuada tincidunt.
-            </p>
+
             <div className="flex mb-4">
               <div className="mr-4">
                 <span className="font-bold text-gray-700 dark:text-gray-300">

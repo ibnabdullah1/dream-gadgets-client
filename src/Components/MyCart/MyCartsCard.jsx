@@ -18,7 +18,7 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          ` https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/cart/${_id}`,
+          ` https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/cart/${_id}`,
           {
             method: "DELETE",
           }
