@@ -8,16 +8,13 @@ const VivoProductCard = () => {
   const addedCart = { ProductName, brand, description, img, price, rating };
   const handleAddProduct = () => {
     console.log(addedCart);
-    fetch(
-      "https://dream-gadget-server-dgh23etb3-arafat-ibn-abdullahs-projects.vercel.app/cart",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(addedCart),
-      }
-    )
+    fetch("http://localhost:5000/cart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(addedCart),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -32,7 +29,11 @@ const VivoProductCard = () => {
         <div className="flex flex-col md:flex-row -mx-4">
           <div className="md:flex-1 px-4">
             <div className="h-[460px] rounded-lg bg-white flex justify-center items-center   mb-4">
-              <img className=" w-[350px]  object-cover" src={img} alt={img} />
+              <img
+                className="  w-auto h-[350px] object-cover"
+                src={img}
+                alt={img}
+              />
             </div>
           </div>
           <div className="md:flex-1 px-4">

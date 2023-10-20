@@ -4,7 +4,7 @@ import Footer from "../Components/Footer/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="Raleway">
+    <div className="Raleway max-w-7xl mx-auto">
       <Navbar />
       <Outlet />
       <Footer />

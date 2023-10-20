@@ -14,12 +14,9 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `https://dream-gadget-server-dgh23etb3-arafat-ibn-abdullahs-projects.vercel.app/cart/${_id}`,
-          {
-            method: "DELETE",
-          }
-        )
+        fetch(`http://localhost:5000/cart/${_id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -87,7 +84,7 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
           ? `${ProductName.slice(0, 30)}...`
           : ProductName}
       </h1>
-      <p className="mb-5 text-lg font-medium text-zinc-800 text-center">
+      <p className="mb-5 text-base font-medium text-zinc-800 text-center">
         {description.length > 100
           ? `${description.slice(0, 70)}...`
           : description}

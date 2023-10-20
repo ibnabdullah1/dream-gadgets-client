@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import toast from "react-hot-toast";
-
+import { Link } from "react-router-dom";
 const HpProductDetails = () => {
   const details = useLoaderData();
   const { ProductName, brand, description, img, price, rating } = details;
@@ -8,16 +8,13 @@ const HpProductDetails = () => {
   const addedCart = { ProductName, brand, description, img, price, rating };
   const handleAddProduct = () => {
     console.log(addedCart);
-    fetch(
-      "https://dream-gadget-server-dgh23etb3-arafat-ibn-abdullahs-projects.vercel.app/cart",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(addedCart),
-      }
-    )
+    fetch("http://localhost:5000/cart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(addedCart),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -32,7 +29,11 @@ const HpProductDetails = () => {
         <div className="flex flex-col md:flex-row -mx-4">
           <div className="md:flex-1 px-4">
             <div className="h-[460px] rounded-lg bg-white flex justify-center items-center   mb-4">
-              <img className=" w-[350px]  object-cover" src={img} alt={img} />
+              <img
+                className=" w-auto h-[350px] object-cover"
+                src={img}
+                alt={img}
+              />
             </div>
           </div>
           <div className="md:flex-1 px-4">
@@ -117,10 +118,10 @@ const HpProductDetails = () => {
               <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
                 {description}
               </p>
-              <div className="w-1/2  flex gap-4 mt-6">
+              <div className="  flex gap-4 mt-6">
                 <button
                   onClick={handleAddProduct}
-                  className="w-full bg-[#ffc107] dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
+                  className=" bg-[#ffc107] dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
                 >
                   Add to Cart
                 </button>
