@@ -56,7 +56,7 @@ const VivoProductsCard = ({ vivoProduct }) => {
           ? `${ProductName.slice(0, 30)}...`
           : ProductName}
       </h1>
-      <p className="mb-5 text-lg font-medium text-zinc-800 text-center">
+      <p className="mb-5 text-base font-medium text-zinc-800 text-center">
         {description.length > 100
           ? `${description.slice(0, 70)}...`
           : description}

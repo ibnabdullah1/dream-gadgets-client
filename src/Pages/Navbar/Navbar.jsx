@@ -18,7 +18,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-[#F15A24]  font-semibold "
+              ? "text-[#ffc107]  font-semibold "
               : ""
           }
         >
@@ -33,7 +33,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-[#F15A24]  font-semibold "
+              ? "text-[#ffc107]  font-semibold "
               : ""
           }
         >
@@ -47,7 +47,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-[#F15A24]  font-semibold "
+              ? "text-[#ffc107]  font-semibold "
               : ""
           }
         >
@@ -109,7 +109,7 @@ const Navbar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "text-blue-500 font-semibold "
+                    ? "text-[#ffc107] font-semibold "
                     : ""
                 }
               >
@@ -150,13 +150,13 @@ const Navbar = () => {
             {user ? (
               <button
                 onClick={handleLogOut}
-                className="bg-blue-500 uppercase w-full text-white font-semibold py-2 px-4 rounded"
+                className="bg-[#ffc107] uppercase w-full text-white font-semibold py-2 px-4 rounded"
               >
                 Sign Out
               </button>
             ) : (
               <Link to="/login">
-                <button className="bg-blue-500 w-full uppercase text-white font-semibold py-2 px-4 rounded">
+                <button className="bg-[#ffc107] w-full uppercase text-white font-semibold py-2 px-4 rounded">
                   Login
                 </button>
               </Link>

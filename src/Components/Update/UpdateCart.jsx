@@ -2,24 +2,25 @@ import Swal from "sweetalert2";
 import { useLoaderData } from "react-router-dom";
 const UpdateCart = () => {
   const Cart = useLoaderData();
-  const { ProductName, brand, description, _id, img, price, rating } = Cart;
-  console.log(Cart);
+  const { ProductName, brand, _id, img, price, rating } = Cart;
+
   const handleUpdateProduct = (e) => {
     e.preventDefault();
     const form = e.target;
     const img = form.img.value;
     const ProductName = form.name.value;
     const brand = form.brand.value;
+    const category = form.category.value;
     const price = form.price.value;
     const rating = form.rating.value;
-    const description = form.description.value;
+
     const UpdateProduct = {
       img,
       price,
-      description,
       ProductName,
       brand,
       rating,
+      category,
     };
     console.log(UpdateProduct);
 
@@ -46,7 +47,7 @@ const UpdateCart = () => {
   };
   return (
     <div className="max-w-[600px] mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
-      <div className="text-2xl py-4 px-6 bg-gray-900 text-white text-center font-bold uppercase">
+      <div className="text-2xl py-4 px-6 bg-[#ffc107] text-white text-center font-bold uppercase">
         Update a Product
       </div>
       <form onSubmit={handleUpdateProduct} className="py-4 px-6">
@@ -97,6 +98,23 @@ const UpdateCart = () => {
           </select>
         </div>
         <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="brand">
+            Category
+          </label>
+          <select
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="category"
+            name="category"
+          >
+            <option value="">Select a Category</option>
+            <option value="Phone">phone</option>
+            <option value="Computer">computer</option>
+            <option value="Headphone">headphone</option>
+            <option value="Laptop">laptop</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+        <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
             Prices($)
           </label>
@@ -124,28 +142,12 @@ const UpdateCart = () => {
           />
         </div>
 
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 font-bold mb-2"
-            htmlFor="description"
-          >
-            Description
-          </label>
-          <textarea
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="description"
-            name="description"
-            rows="4"
-            defaultValue={description}
-            placeholder="Product description here..."
-          ></textarea>
-        </div>
         <div className="flex items-center justify-center mb-4">
           <button
-            className="bg-gray-900 text-white py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline"
+            className="bg-[#ffc107] font-bold text-white py-2 px-4 rounded hover:bg-[#e4c360] focus:outline-none focus:shadow-outline"
             type="submit"
           >
-            AddProduct
+            Update
           </button>
         </div>
       </form>

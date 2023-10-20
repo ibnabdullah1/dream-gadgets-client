@@ -23,22 +23,17 @@ const Footer = () => {
                 </div>
                 <ul className="leading-8">
                   <li>
-                    <a href="#" className="hover:text-blue-400">
+                    <a className="">
                       The BANGLADESH — <br />
                       Bashundhara City, Dhaka <br /> Level 5, Block C,Shop 85
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-blue-400">
+                    <a href="#" className="hover:text-[#ffc107]">
                       dreamgadgets01@email.com
                     </a>
                   </li>
                   <li className="Barlow-Condensed">+1 800 555 45 65</li>
-                  <li>
-                    <a href="#" className="hover:text-blue-400">
-                      Contact Us
-                    </a>
-                  </li>
                 </ul>
               </div>
               <div className="px-4 my-4 w-full sm:w-auto">
@@ -49,23 +44,23 @@ const Footer = () => {
                 </div>
                 <ul className="leading-8">
                   <li>
-                    <a href="#" className="hover:text-blue-400">
+                    <a href="#" className="hover:text-[#ffc107]">
                       Home
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-blue-400">
+                    <a href="#" className="hover:text-[#ffc107]">
                       About
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-blue-400">
+                    <a href="#" className="hover:text-[#ffc107]">
                       Blog
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-blue-400">
-                      Contact
+                    <a href="#" className="hover:text-[#ffc107]">
+                      Contact Us
                     </a>
                   </li>
                 </ul>
@@ -78,7 +73,7 @@ const Footer = () => {
                 </div>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400"
+                  className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-[#ffc107] hover:border-[#ffc107]"
                 >
                   <svg
                     className="w-4 h-4 fill-current"
@@ -90,7 +85,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400"
+                  className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-[#ffc107] hover:border-[#ffc107]"
                 >
                   <svg
                     className="w-4 h-4 fill-current"
@@ -102,7 +97,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400"
+                  className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-[#ffc107] hover:border-[#ffc107]"
                 >
                   <svg
                     className="w-4 h-4 fill-current"
@@ -114,7 +109,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400"
+                  className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-[#ffc107] hover:border-[#ffc107]"
                 >
                   <svg
                     className="w-4 h-4 fill-current"
@@ -126,7 +121,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full hover:text-blue-400 hover:border-blue-400"
+                  className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full hover:text-[#ffc107] hover:border-[#ffc107]"
                 >
                   <svg
                     className="w-4 h-4 fill-current"
@@ -145,7 +140,7 @@ const Footer = () => {
           <div className="container mx-auto px-4">
             <div className="-mx-4 flex flex-wrap justify-between">
               <div className="px-4 w-full text-center sm:w-auto sm:text-left">
-                Copyright © 2020 - 2022 Gadgets All Rights Reserved.
+                Copyright © 2023 Gadgets All Rights Reserved.
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const MyCartsCard = ({ cart, setCarts, Carts }) => {
   const { ProductName, brand, description, _id, img, price, rating } = cart;
-
+  console.log(description);
   const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -85,7 +85,7 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
           : ProductName}
       </h1>
       <p className="mb-5 text-base font-medium text-zinc-800 text-center">
-        {description.length > 100
+        {description?.length > 100
           ? `${description.slice(0, 70)}...`
           : description}
       </p>
