@@ -1,13 +1,14 @@
+//
 import { useLoaderData } from "react-router-dom";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import Rating from "react-rating";
 const HpProductDetails = () => {
   const details = useLoaderData();
   const { ProductName, brand, description, img, price, rating } = details;
-
+  const parRating = parseFloat(rating);
   const addedCart = { ProductName, brand, description, img, price, rating };
   const handleAddProduct = () => {
-    console.log(addedCart);
     fetch(
       " https://dream-gadget-server-dp5f86ygc-arafat-ibn-abdullahs-projects.vercel.app/cart",
       {
@@ -27,13 +28,13 @@ const HpProductDetails = () => {
       });
   };
   return (
-    <div className="bg-gray-100 dark:bg-gray-800 py-8">
+    <div className="bg-gray-100 py-20 dark:bg-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row -mx-4">
           <div className="md:flex-1 px-4">
             <div className="h-[460px] rounded-lg bg-white flex justify-center items-center   mb-4">
               <img
-                className=" w-auto h-[350px] object-cover"
+                className=" w-auto h-[350px]  object-cover"
                 src={img}
                 alt={img}
               />
@@ -63,55 +64,54 @@ const HpProductDetails = () => {
               </div>
             </div>
             {/* // rating card */}
-            <div className="flex gap-4">
-              <div className="flex">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="text-yellow-500 w-5 h-auto fill-current hover:text-red-600"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="text-yellow-500 w-5 h-auto fill-current hover:text-yellow-600"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="text-yellow-500 w-5 h-auto fill-current hover:text-yellow-600"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                </svg>
+            <div className="flex justify-start items-center">
+              <p className="flex justify-center items-center font-sans text-base font-normal leading-normal text-orange-400 antialiased opacity-75">
+                <Rating
+                  emptySymbol={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
+                      />
+                    </svg>
+                  }
+                  fullSymbol={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  }
+                  initialRating={parRating}
+                  readonly
+                />
 
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="text-yellow-500 w-5 h-auto fill-current hover:text-green-600"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z" />
-                </svg>
-
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="text-yellow-500 w-5 h-auto fill-current hover:text-green-600"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
-                </svg>
-              </div>
-
-              <span className="text-slate-400 font-medium">
-                {rating
-                  ? rating.length > 3
-                    ? rating.slice(0, 3)
-                    : rating
-                  : ""}{" "}
-                out of 5 stars
-              </span>
+                <span>
+                  ({" "}
+                  {rating &&
+                    (rating.length > 3
+                      ? rating.slice(0, 3)
+                      : rating
+                      ? rating
+                      : "0")}
+                  )
+                </span>
+              </p>
             </div>
 
             <div>
@@ -124,11 +124,11 @@ const HpProductDetails = () => {
               <div className="  flex gap-4 mt-6">
                 <button
                   onClick={handleAddProduct}
-                  className=" bg-[#ffc107] dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
+                  className="l bg-[#ffc107] dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700"
                 >
                   Add to Cart
                 </button>
-                <Link to={"/samsung"}>
+                <Link to={"/hp"}>
                   <button className=" px-10 bg-[#ffc107] dark:bg-gray-600 text-white py-2  rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">
                     Back
                   </button>

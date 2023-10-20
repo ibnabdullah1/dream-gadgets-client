@@ -20,6 +20,7 @@ import CanonProducts from "../Components/Canon/CanonProducts";
 import CanonProductDetails from "../Components/Canon/CanonProductDetails";
 import PrivateRoute from "./PrivateRoute";
 import UpdateCart from "../Components/Update/UpdateCart";
+import HpProductDetails from "../Components/HP/HpProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -169,7 +170,7 @@ const router = createBrowserRouter([
         path: "/hp/:id",
         element: (
           <PrivateRoute>
-            <SamsungProductDetails />
+            <HpProductDetails />
           </PrivateRoute>
         ),
         loader: ({ params }) =>

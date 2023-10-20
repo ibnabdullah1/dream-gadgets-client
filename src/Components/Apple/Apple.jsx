@@ -17,6 +17,3 @@ const Apple = () => {
 };
 
 export default Apple;
-
-// https://i.ibb.co/MDdGnpt/Picsart-23-10-20-04-10-49-382.jpg
-// https://i.ibb.co/Kzdzbcv/Picsart-23-10-20-04-12-31-620.jpg
