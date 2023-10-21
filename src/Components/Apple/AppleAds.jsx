@@ -32,20 +32,9 @@ const AppleAds = () => {
             <div className=" space-y-1  mx-auto h-auto ">
               <img
                 className="w-full h-full"
-                src="https://i.ibb.co/Kzdzbcv/Picsart-23-10-20-04-12-31-620.jpg"
+                src="https://i.ibb.co/k9knfZm/Picsart-23-10-21-14-11-11-913.jpg"
                 alt=""
               />
-              <div className="absolute top-[150px] left-[200px] text-white">
-                <h3 className="text-4xl font-extrabold">iphone 15</h3>
-                <p>So strong | so light | so pro</p>
-              </div>
-              <div className="absolute bottom-[50px] left-[200px] text-white">
-                <button className="bg-white text-black py-1  rounded-md font-bold px-3">
-                  Visit now
-                </button>
-                <p className="text-sm">Level 5, Block C,Shop 85</p>
-                <p className="text-sm">Bashundhara City, Dhaka</p>
-              </div>
             </div>
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a
