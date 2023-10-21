@@ -23,7 +23,7 @@ const AddProduct = () => {
     console.log(newProduct);
 
     fetch(
-      " https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/product",
+      " https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/product",
       {
         method: "POST",
         headers: {

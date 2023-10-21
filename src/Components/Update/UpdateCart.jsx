@@ -1,9 +1,9 @@
 import Swal from "sweetalert2";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 const UpdateCart = () => {
   const Cart = useLoaderData();
   const { ProductName, brand, _id, img, price, rating } = Cart;
-
+  const navigate = useNavigate();
   const handleUpdateProduct = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -22,10 +22,9 @@ const UpdateCart = () => {
       rating,
       category,
     };
-    console.log(UpdateProduct);
 
     fetch(
-      ` https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/cart/${_id}`,
+      ` https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/cart/${_id}`,
       {
         method: "PUT",
         headers: {
@@ -36,7 +35,6 @@ const UpdateCart = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
@@ -44,8 +42,8 @@ const UpdateCart = () => {
             icon: "success",
             confirmButtonText: "Ok",
           });
+          navigate("/cartProducts");
         }
-        form.reset();
       });
   };
   return (

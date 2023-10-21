@@ -14,7 +14,7 @@ const CanonProductsCard = ({ canonProduct }) => {
       <div className="flex justify-center">
         <img className="h-[180px] w-auto" src={img} alt="" />
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center mt-3 items-center">
         <p className="flex justify-center items-center font-sans text-base font-normal leading-normal text-orange-400 antialiased opacity-75">
           <Rating
             emptySymbol={
@@ -51,12 +51,12 @@ const CanonProductsCard = ({ canonProduct }) => {
             readonly
           />
 
-          <span>
-            ({" "}
-            {rating &&
-              (rating.length > 3 ? rating.slice(0, 3) : rating ? rating : "0")}
-            )
-          </span>
+          {rating && (
+            <span>
+              ( {rating.length > 3 ? rating.slice(0, 3) : rating ? rating : "0"}
+              )
+            </span>
+          )}
         </p>
       </div>
 
@@ -65,7 +65,7 @@ const CanonProductsCard = ({ canonProduct }) => {
           ? `${ProductName.slice(0, 30)}...`
           : ProductName}
       </h1>
-      <p className="mb-5 text-base font-medium text-zinc-800 text-center">
+      <p className="mb-5 px-2 text-base font-medium text-zinc-800 text-center">
         {description.length > 100
           ? `${description.slice(0, 60)}...`
           : description}
@@ -75,7 +75,7 @@ const CanonProductsCard = ({ canonProduct }) => {
       </h2>
 
       <div className="flex gap-6 justify-center items-center">
-        <Link to={`/vivo/${_id}`}>
+        <Link to={`/canon/${_id}`}>
           <button className="inline-block px-12 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
             Details
           </button>
@@ -92,7 +92,7 @@ CanonProductsCard.propTypes = {
     brand: PropTypes.string,
     description: PropTypes.string,
     img: PropTypes.string,
-    price: PropTypes.number,
+    price: PropTypes.string,
     rating: PropTypes.string,
   }).isRequired,
 };

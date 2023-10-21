@@ -11,7 +11,7 @@ const CanonProductDetails = () => {
   const addedCart = { ProductName, brand, description, img, price, rating };
   const handleAddProduct = () => {
     fetch(
-      " https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/cart",
+      " https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/cart",
       {
         method: "POST",
         headers: {

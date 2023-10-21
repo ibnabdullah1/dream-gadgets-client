@@ -2,7 +2,7 @@ import { AiFillCheckCircle } from "react-icons/ai";
 const About = () => {
   return (
     <>
-      <section className=" px-10 overflow-hidden">
+      <section className=" px-10 overflow-hidden py-10">
         <div className="container">
           <div className="flex flex-wrap items-center justify-between -mx-4">
             <div className="w-full px-4 lg:w-6/12">
@@ -610,7 +610,7 @@ const About = () => {
                   Why buy from us
                 </span>
 
-                <h3 className="text-4xl mb-7 Oswald font-bold  text-gray-600">
+                <h3 className="text-5xl mb-7 Oswald font-bold  text-gray-600">
                   Our <span className="text-[#ffc107]">Special Service</span>
                 </h3>
 
@@ -620,7 +620,7 @@ const About = () => {
                   various electronic devices. Our skilled technicians are
                   equipped to address a wide range of issues, ensuring that your
                   electronic devices continue to operate efficiently and
-                  effectively. Whether it's a broken laptop screen, a
+                  effectively. Whether its a broken laptop screen, a
                   malfunctioning keyboard, or software problems, our services
                   cover both hardware and software issues.
                 </p>

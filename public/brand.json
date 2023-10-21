@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "img": "https://i.ibb.co/gV9qQZN/apple.jpg",
+    "img": "https://www.svgrepo.com/show/442910/brand-apple.svg",
     "title": "Apple",
     "path": "apple"
   },
   {
     "id": 2,
-    "img": "https://i.ibb.co/gjz9wTm/lenovobg.jpg",
+    "img": "https://www.svgrepo.com/show/341988/lenovo.svg",
     "title": "Lenovo",
     "path": "lenovo"
   },
   {
     "id": 3,
-    "img": "https://i.ibb.co/Wn3525G/samsung.webp",
+    "img": "https://www.svgrepo.com/show/342186/samsung.svg",
     "title": "Samsung",
     "path": "samsung"
   },
   {
     "id": 4,
-    "img": "https://i.ibb.co/PDwJ1FW/vivo-bg.jpg",
+    "img": "https://www.svgrepo.com/show/303534/vivo-2-logo.svg",
     "title": "Vivo",
     "path": "vivo"
   },
   {
     "id": 5,
-    "img": "https://i.ibb.co/mTjBRkb/hp-bg.jpg",
-    "title": "HP (Hewlett-Packard)",
+    "img": "https://www.svgrepo.com/show/341912/hp.svg",
+    "title": "HP",
     "path": "hp"
   },
   {
     "id": 6,
-    "img": "https://i.ibb.co/Pjn9CW9/canon.jpg",
+    "img": "https://i.ibb.co/YLj3Z5W/Canon-logo.png",
     "title": "Canon",
     "path": "canon"
   }

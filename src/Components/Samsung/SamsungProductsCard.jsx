@@ -65,7 +65,7 @@ const SamsungProductsCard = ({ samsungProduct }) => {
           ? `${ProductName.slice(0, 30)}...`
           : ProductName}
       </h1>
-      <p className="mb-5 mx-2 text-base font-medium text-zinc-800 text-center">
+      <p className="mb-5 px-2 text-base font-medium text-zinc-800 text-center">
         {description.length > 100
           ? `${description.slice(0, 70)}...`
           : description}
@@ -92,7 +92,7 @@ SamsungProductsCard.propTypes = {
     brand: PropTypes.string,
     description: PropTypes.string,
     img: PropTypes.string,
-    price: PropTypes.number,
+    price: PropTypes.string,
     rating: PropTypes.string,
   }).isRequired,
 };

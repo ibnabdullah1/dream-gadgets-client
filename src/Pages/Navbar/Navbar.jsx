@@ -4,7 +4,6 @@ import { useContext } from "react";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
-
   const handleLogOut = () => {
     return logout();
   };
@@ -81,6 +80,22 @@ const Navbar = () => {
             className="menu  dropdown-content mt-3 z-[1] w-80 p-2 shadow bg-base-100 rounded"
           >
             {navLinks}
+            {user && (
+              <li>
+                <NavLink
+                  to="/login"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-[#ffc107] font-semibold "
+                      : ""
+                  }
+                >
+                  Login
+                </NavLink>
+              </li>
+            )}
           </ul>
         </div>
         <div>

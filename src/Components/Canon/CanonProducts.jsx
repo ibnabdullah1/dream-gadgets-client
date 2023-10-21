@@ -8,12 +8,13 @@ const CanonProducts = () => {
     <div>
       <CanonAds />
       <div className="grid bg-gray-100 grid-cols-1 min-h-screen py-10 md:py-20 px-10 gap-7 md:grid-cols-2 lg:grid-cols-3">
-        {canonProducts.map((canonProduct) => (
-          <CanonProductsCard
-            key={canonProduct._id}
-            canonProduct={canonProduct}
-          ></CanonProductsCard>
-        ))}
+        {canonProducts &&
+          canonProducts.map((canonProduct) => (
+            <CanonProductsCard
+              key={canonProduct._id}
+              canonProduct={canonProduct}
+            ></CanonProductsCard>
+          ))}
       </div>
     </div>
   );

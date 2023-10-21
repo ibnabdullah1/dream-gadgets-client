@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const MyCartsCard = ({ cart, setCarts, Carts }) => {
   const { ProductName, brand, description, _id, img, price, rating } = cart;
   const parRating = parseFloat(rating);
-  console.log(parRating);
+
   const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -18,7 +18,7 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          ` https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/cart/${_id}`,
+          ` https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/cart/${_id}`,
           {
             method: "DELETE",
           }
@@ -46,7 +46,7 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
       <div className="flex justify-center">
         <img className="h-[180px] w-auto" src={img} alt="" />
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center mt-3 items-center">
         <p className="flex justify-center items-center font-sans text-sm font-normal leading-normal text-orange-400 antialiased opacity-75">
           <Rating
             emptySymbol={
@@ -82,9 +82,12 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
             initialRating={parRating}
             readonly
           />
-          <span>
-            {rating && (rating.length > 3 ? rating.slice(0, 3) : rating)}
-          </span>
+          {rating && (
+            <span>
+              ( {rating.length > 3 ? rating.slice(0, 3) : rating ? rating : "0"}
+              )
+            </span>
+          )}
         </p>
       </div>
 
@@ -93,7 +96,7 @@ const MyCartsCard = ({ cart, setCarts, Carts }) => {
           ? `${ProductName.slice(0, 30)}...`
           : ProductName}
       </h1>
-      <p className="mb-5 text-base font-medium text-zinc-800 text-center">
+      <p className="mb-5 px-2 text-base font-medium text-zinc-800 text-center">
         {description?.length > 100
           ? `${description.slice(0, 70)}...`
           : description}
@@ -127,7 +130,7 @@ MyCartsCard.propTypes = {
     brand: PropTypes.string,
     description: PropTypes.string,
     img: PropTypes.string,
-    price: PropTypes.number,
+    price: PropTypes.string,
     rating: PropTypes.string,
   }).isRequired,
   setCarts: PropTypes.func.isRequired,

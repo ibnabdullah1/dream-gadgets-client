@@ -10,7 +10,6 @@ import Brand from "../Components/Brand/Brand";
 import MyCart from "../Components/MyCart/MyCart";
 import VivoProducts from "../Components/Vivo/VivoProducts";
 import AppleProductDetails from "../Components/Apple/AppleProductDetails";
-import VivoProductCard from "../Components/Vivo/VivoProductcard";
 import LenovoPCard from "../Components/Lenovo/LenovoPCard";
 import SamsungProducts from "../Components/Samsung/SamsungProducts";
 import SamsungProductDetails from "../Components/Samsung/SamsungProductDetails";
@@ -21,6 +20,7 @@ import PrivateRoute from "./PrivateRoute";
 import UpdateCart from "../Components/Update/UpdateCart";
 import HpProductDetails from "../Components/HP/HpProductDetails";
 import Error from "../Components/ErrorPage/ErrorPage";
+import VivoProductsCard from "../Components/Vivo/VivoProductsCard";
 
 const router = createBrowserRouter([
   {
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            " https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/Apple"
+            " https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/Apple"
           ),
       },
       {
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            ` https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/Apple/${params.id}`
+            ` https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/Apple/${params.id}`
           ),
       },
       {
@@ -88,7 +88,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            " https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/lenovo"
+            " https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/lenovo"
           ),
       },
       {
@@ -100,7 +100,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            ` https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/lenovo/${params.id}`
+            ` https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/lenovo/${params.id}`
           ),
       },
       {
@@ -113,7 +113,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            " https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/vivo"
+            " https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/vivo"
           ),
       },
       {
@@ -121,12 +121,12 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             {" "}
-            <VivoProductCard />
+            <VivoProductsCard />
           </PrivateRoute>
         ),
         loader: ({ params }) =>
           fetch(
-            ` https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/vivo/${params.id}`
+            ` https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/vivo/${params.id}`
           ),
       },
       {
@@ -138,7 +138,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            " https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/samsung"
+            " https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/samsung"
           ),
       },
       {
@@ -150,7 +150,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            ` https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/samsung/${params.id}`
+            ` https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/samsung/${params.id}`
           ),
       },
       {
@@ -163,7 +163,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            " https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/hp"
+            " https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/hp"
           ),
       },
       {
@@ -175,7 +175,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            ` https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/hp/${params.id}`
+            ` https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/hp/${params.id}`
           ),
       },
       {
@@ -187,7 +187,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            " https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/canon"
+            " https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/canon"
           ),
       },
       {
@@ -199,7 +199,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            ` https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/canon/${params.id}`
+            ` https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/canon/${params.id}`
           ),
       },
 
@@ -213,7 +213,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            " https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/cart"
+            " https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/cart"
           ),
       },
       {
@@ -226,7 +226,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            ` https://dream-gadget-server-pdsq0vqpo-arafat-ibn-abdullahs-projects.vercel.app/cart/${params.id}`
+            ` https://dream-gadget-server-jxsb5q782-arafat-ibn-abdullahs-projects.vercel.app/cart/${params.id}`
           ),
       },
     ],
