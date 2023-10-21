@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 const UpdateCart = () => {
   const Cart = useLoaderData();
   const { ProductName, brand, _id, img, price, rating } = Cart;
